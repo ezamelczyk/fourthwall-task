@@ -23,6 +23,7 @@ android {
 ext {
     retrofitVersion = "2.6.1"
     koinVersion = '2.0.1'
+    pagingVersion = "2.1.0"
 }
 
 dependencies {
@@ -34,6 +35,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0'
     implementation "androidx.recyclerview:recyclerview:1.0.0"
+    implementation "androidx.paging:paging-runtime-ktx:$pagingVersion"
 
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-moshi:$retrofitVersion"

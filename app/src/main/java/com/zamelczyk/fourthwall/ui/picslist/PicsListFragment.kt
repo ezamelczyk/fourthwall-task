@@ -7,8 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.paging.PagedList
 import androidx.recyclerview.widget.GridLayoutManager
 import com.zamelczyk.fourthwall.R
+import com.zamelczyk.fourthwall.api.Pic
+import com.zamelczyk.fourthwall.ui.picslist.adapter.PicsListAdapter
 import kotlinx.android.synthetic.main.pics_list_fragment.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -34,11 +37,11 @@ class PicsListFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel.viewState.observe(this, Observer(::onViewState))
-        viewModel.fetchList()
+        viewModel.pagedList.observe(this, Observer(adapter::submitList))
     }
 
     private fun onViewState(viewState: PicsListViewState) {
-        adapter.update(viewState.picsList)
+
     }
 
     private fun getSpanCount(): Int {

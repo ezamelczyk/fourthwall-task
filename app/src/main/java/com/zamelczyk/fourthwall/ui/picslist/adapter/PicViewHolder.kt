@@ -1,4 +1,4 @@
-package com.zamelczyk.fourthwall.ui.picslist
+package com.zamelczyk.fourthwall.ui.picslist.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -23,8 +23,10 @@ class PicViewHolder private constructor(view: View) : RecyclerView.ViewHolder(vi
 
     companion object {
         fun create(viewGroup: ViewGroup): PicViewHolder {
-            return PicViewHolder(LayoutInflater.from(viewGroup.context)
-                .inflate(R.layout.pic_item, viewGroup, false))
+            return PicViewHolder(
+                LayoutInflater.from(viewGroup.context)
+                    .inflate(R.layout.pic_item, viewGroup, false)
+            )
         }
     }
 
