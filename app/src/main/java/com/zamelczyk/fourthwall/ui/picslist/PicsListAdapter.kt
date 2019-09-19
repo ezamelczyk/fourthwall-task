@@ -9,7 +9,7 @@ class PicsListAdapter: RecyclerView.Adapter<PicViewHolder>() {
     private val items = mutableListOf<Pic>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PicViewHolder {
-        return PicViewHolder(parent.context)
+        return PicViewHolder.create(parent)
     }
 
     override fun getItemCount(): Int {

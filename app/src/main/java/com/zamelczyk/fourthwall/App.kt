@@ -25,8 +25,8 @@ class App : Application() {
         }
     }
 
-    private fun retrofit() {
-        Retrofit.Builder()
+    private fun retrofit(): ApiInterface {
+        return Retrofit.Builder()
             .baseUrl("https://picsum.photos/")
             .addConverterFactory(MoshiConverterFactory.create())
             .build()
