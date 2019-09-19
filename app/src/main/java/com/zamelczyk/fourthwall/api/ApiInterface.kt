@@ -6,6 +6,6 @@ import retrofit2.http.Query
 interface ApiInterface {
 
     @GET("v2/list")
-    suspend fun getPics(@Query("page") page: Int): List<Pic>
+    suspend fun getPics(@Query("page") page: Int? = null): List<Pic>
 
 }
