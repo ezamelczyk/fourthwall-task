@@ -1,8 +1,9 @@
-package com.zamelczyk.fourthwall
+package com.zamelczyk.fourthwall.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.zamelczyk.fourthwall.ui.main.MainFragment
+import com.zamelczyk.fourthwall.R
+import com.zamelczyk.fourthwall.ui.picslist.PicsListFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.main_activity)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, MainFragment.newInstance())
+                .replace(R.id.container, PicsListFragment.newInstance())
                 .commitNow()
         }
     }
